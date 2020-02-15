@@ -1,0 +1,12 @@
+#ignorar objetos
+lista.o
+main.o
+
+#ignorar executavel
+main
+
+#ignorar makefile
+Makefile
+
+#ignorar pastas
+.vscode/
