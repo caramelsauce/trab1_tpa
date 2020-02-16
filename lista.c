@@ -96,23 +96,55 @@ void insereCodigo(struct lista *lista, struct no *elemento)
     }
 }
 
+void consultarNome(struct lista *lista, char *nome)
+{
+    struct no *aux = lista->prim;
+    while (aux != NULL)
+    {
+        if (strcmp(nome, aux->p_cidade->nome) == 0)
+        {
+            printf("\nDados da cidade:\n\n\t%s %d\n", aux->p_cidade->nome, aux->p_cidade->codigo);
+            return;
+        }
+        else
+            aux = aux->prox;
+    }
+    printf("\nNome não encontrado\n\n");
+}
+
+void consultarCodigo(struct lista *lista, int codigo)
+{
+    struct no *aux = lista->prim;
+    while (aux != NULL)
+    {
+        if (aux->p_cidade->codigo == codigo)
+        {
+            printf("\nDados da cidade:\n\n\t%s %d\n", aux->p_cidade->nome, aux->p_cidade->codigo);
+            return;
+        }
+        else
+            aux = aux->prox;
+    }
+    printf("\nCódigo não encontrado\n\n");
+}
+
 void exibir(struct lista *listaNome, struct lista *listaCodigo)
 {
     int i = 1;
     struct no *aux = listaNome->prim;
-    printf("\nLista ordenada por nome:\n");
+    printf("\nLista ordenada por nome:\n\n");
     while (aux != NULL)
     {
-        printf("%d %s %d\n", i, aux->p_cidade->nome, aux->p_cidade->codigo);
+        printf("\t%d - %s [%d]\n", i, aux->p_cidade->nome, aux->p_cidade->codigo);
         aux = aux->prox;
         i++;
     }
     aux = listaCodigo->prim;
     i = 1;
-    printf("\nLista ordenada por código:\n");
+    printf("\nLista ordenada por código:\n\n");
     while (aux != NULL)
     {
-        printf("%d %s %d\n", i, aux->p_cidade->nome, aux->p_cidade->codigo);
+        printf("\t%d - %s [%d]\n", i, aux->p_cidade->nome, aux->p_cidade->codigo);
         aux = aux->prox;
         i++;
     }

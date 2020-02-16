@@ -13,6 +13,6 @@ int main(int argc, char *argv[])
     inserir(&listaNome, &listaCodigo, "Belo Horizonte", 1234);
     inserir(&listaNome, &listaCodigo, "Sao Paulo", 9999);
     exibir(&listaNome, &listaCodigo);
-    //printf("%s", listaCodigo.prim->prox->p_cidade->nome);
+    consultarCodigo(&listaNome, 1234);
     return 0;
 }
