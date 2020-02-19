@@ -135,7 +135,7 @@ void exibir(struct lista *listaNome, struct lista *listaCodigo)
     printf("\nLista ordenada por nome:\n\n");
     while (aux != NULL)
     {
-        printf("\t%d - %s [%d]\n", i, aux->p_cidade->nome, aux->p_cidade->codigo);
+        printf("\t%d %s\n", aux->p_cidade->codigo, aux->p_cidade->nome);
         aux = aux->prox;
         i++;
     }
@@ -144,7 +144,7 @@ void exibir(struct lista *listaNome, struct lista *listaCodigo)
     printf("\nLista ordenada por código:\n\n");
     while (aux != NULL)
     {
-        printf("\t%d - %s [%d]\n", i, aux->p_cidade->nome, aux->p_cidade->codigo);
+        printf("\t%d %s\n", aux->p_cidade->codigo, aux->p_cidade->nome);
         aux = aux->prox;
         i++;
     }
