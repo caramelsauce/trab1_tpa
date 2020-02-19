@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lista.h"
-#include "ler_arquivo.h"
+#include "arquivo.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,7 +16,8 @@ int main(int argc, char *argv[])
     exibir(&listaNome, &listaCodigo);
     consultarCodigo(&listaNome, 1234);
     */
-    preencher_listas(&listaNome, &listaCodigo, "entrada.txt");
+    preencherListas(&listaNome, &listaCodigo, "entrada.txt");
     exibir(&listaNome, &listaCodigo);
+    gerarArquivos(&listaNome, &listaCodigo);
     return 0;
 }
