@@ -4,16 +4,19 @@
 
 #include "lista.h"
 
+// Setar os ponteiros da lista pra NULL
 void inicLista(struct lista *lista)
 {
     lista->prim = lista->ult = NULL;
 }
 
+// Verificar se os ponteiros da lista apontam pra NULL
 int listaVazia(struct lista *lista)
 {
     return (!lista->prim && !lista->ult);
 }
 
+//Aloca a cidade e os elementos e insere nas duas listas de forma ordenada
 void inserir(struct lista *listaNome, struct lista *listaCodigo, char *nome,
              int codigo)
 {
@@ -103,7 +106,7 @@ void consultarNome(struct lista *lista, char *nome)
     {
         if (strcmp(nome, aux->p_cidade->nome) == 0)
         {
-            printf("\nDados da cidade:\n\n\t%s %d\n", aux->p_cidade->nome, aux->p_cidade->codigo);
+            printf("\nDados da cidade:\n\n\t%d %s\n", aux->p_cidade->codigo, aux->p_cidade->nome);
             return;
         }
         else
@@ -119,7 +122,7 @@ void consultarCodigo(struct lista *lista, int codigo)
     {
         if (aux->p_cidade->codigo == codigo)
         {
-            printf("\nDados da cidade:\n\n\t%s %d\n", aux->p_cidade->nome, aux->p_cidade->codigo);
+            printf("\nDados da cidade:\n\n\t%d %s\n", aux->p_cidade->codigo, aux->p_cidade->nome);
             return;
         }
         else
