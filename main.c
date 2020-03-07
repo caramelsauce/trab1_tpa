@@ -6,6 +6,8 @@
 #include "lista.h"
 #include "arquivo.h"
 
+// Printa as opções do menu
+
 void menu()
 {
     printf("\n\n");
