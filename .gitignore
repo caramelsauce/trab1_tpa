@@ -12,3 +12,8 @@ Makefile
 #ignorar pastas
 .vscode/
 geraArquivo/
+
+#ignorar txts
+entrada.txt
+listaCodigo.txt
+listaNome.txt
