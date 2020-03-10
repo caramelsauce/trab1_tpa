@@ -6,33 +6,31 @@
 #include "lista.h"
 #include "arquivo.h"
 
-// Printa as opções do menu
+// Printa as op��es do menu
 
 void menu()
 {
     printf("\n\n");
     printf("1 - Efetuar busca por nome\n");
-    printf("2 - Efetuar busca por código\n");
+    printf("2 - Efetuar busca por c�digo\n");
     printf("3 - Sair\n");
-    printf("Opção: ");
+    printf("Op��o: ");
 }
 
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
 
-    // Declaração de variáveis
-
     int quit = 0, op;
     struct lista listaCodigo;
     struct lista listaNome;
 
-    // Inicialização das Listas
+    // Inicializa��o das Listas
 
     inicLista(&listaCodigo);
     inicLista(&listaNome);
 
-    // Carregar os dados do arquivos de texto para a Memória
+    // Carregar os dados do arquivos de texto para a Mem�ria
 
     printf("Carregando dados do arquivo de texto...\n");
     preencherListas(&listaNome, &listaCodigo, "entrada.txt");
@@ -61,13 +59,13 @@ int main()
             break;
         }
 
-            // 2 - Consulta por código
+            // 2 - Consulta por c�digo
 
         case 2:
         {
             int codigo;
             clock_t clock_inicial, clock_final;
-            printf("\nDigite o código: ");
+            printf("\nDigite o c�digo: ");
             scanf("%d", &codigo);
             clock_inicial = clock();
             consultarCodigo(&listaCodigo, codigo);
@@ -82,7 +80,7 @@ int main()
             quit = 1;
             break;
         default:
-            printf("\nOpção Inválida\n");
+            printf("\nOp��o Inv�lida\n");
             break;
         }
     }

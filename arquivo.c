@@ -6,7 +6,7 @@ void preencherListas(struct lista *listaNome, struct lista *listaCodigo, char *n
     int codigo, r;                   // r recebe o retorno de fscanf e para o loop em EOF
     FILE *fp = fopen(nome_arq, "r"); // abre o arquivo
 
-    // Caso nÃ£o consiga abrir o arquivo termina a execuÃ§Ã£o do programa
+    // Caso não consiga abrir o arquivo termina a execução do programa
 
     if (!fp)
     {
@@ -33,7 +33,7 @@ void gerarArquivos(struct lista *listaNome, struct lista *listaCodigo)
     fp = fopen("listaNome.txt", "w"); // primeiro abre o arquivo para a lista ordenada por nome
     printf("Gerando arquivos...\n");
 
-    // Termina a execuÃ§Ã£o com falha caso nÃ£o seja possÃ­vel gerar o arquivo
+    // Termina a execução com falha caso não seja possível gerar o arquivo
 
     if (!fp)
     {
@@ -53,9 +53,9 @@ void gerarArquivos(struct lista *listaNome, struct lista *listaCodigo)
         fclose(fp);
     }
 
-    fp = fopen("listaCodigo.txt", "w"); // Abre o arquivo da lista ordenada por cÃ³digo
+    fp = fopen("listaCodigo.txt", "w"); // Abre o arquivo da lista ordenada por código
 
-    // Termina a execuÃ§Ã£o com falha caso nÃ£o seja possÃ­vel gerar o arquivo
+    // Termina a execução com falha caso não seja possível gerar o arquivo
 
     if (!fp)
     {
@@ -66,7 +66,7 @@ void gerarArquivos(struct lista *listaNome, struct lista *listaCodigo)
     else
     {
         aux = listaCodigo->prim;
-        fprintf(fp, "Lista Ordenada por CÃ³digo:\n\n");
+        fprintf(fp, "Lista Ordenada por Código:\n\n");
         while (aux != NULL)
         {
             fprintf(fp, "\t%d; %s\n", aux->p_cidade->codigo, aux->p_cidade->nome);

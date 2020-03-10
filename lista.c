@@ -17,7 +17,7 @@ int listaVazia(struct lista *lista)
 void inserir(struct lista *listaNome, struct lista *listaCodigo, char *nome,
              int codigo)
 {
-    // Aloca uma cidade para guardar o nome e o cÃ³digo
+    // Aloca uma cidade para guardar o nome e o código
 
     struct cidade *nova_cidade = malloc(sizeof(struct cidade));
 
@@ -26,7 +26,7 @@ void inserir(struct lista *listaNome, struct lista *listaCodigo, char *nome,
     strcpy(nova_cidade->nome, nome);
     nova_cidade->codigo = codigo;
 
-    // Aloca 2 elementos sendo 1 para lista ordenada por nome e o outro para a lista ordenada por cÃ³digo
+    // Aloca 2 elementos sendo 1 para lista ordenada por nome e o outro para a lista ordenada por código
 
     struct no *elemento_nome = malloc(sizeof(struct no));
     struct no *elemento_codigo = malloc(sizeof(struct no));
@@ -40,7 +40,7 @@ void inserir(struct lista *listaNome, struct lista *listaCodigo, char *nome,
     elemento_codigo->prox = elemento_codigo->ant = NULL;
 
     insereNome(listaNome, elemento_nome);       // Insere um elemento na lista ordenada por nome
-    insereCodigo(listaCodigo, elemento_codigo); // Insere um elemento na lista ordenada por cÃ³digo
+    insereCodigo(listaCodigo, elemento_codigo); // Insere um elemento na lista ordenada por código
 }
 
 void insereNome(struct lista *lista, struct no *elemento)
@@ -54,14 +54,14 @@ void insereNome(struct lista *lista, struct no *elemento)
     {
         struct no *aux = lista->prim;
 
-        // Move o ponteiro aux atÃ© a posiÃ§Ã£o que deve ser inserido o elemento
+        // Move o ponteiro aux atual a posição que deve ser inserido o elemento
 
         while (aux != NULL && strcmp(elemento->p_cidade->nome, aux->p_cidade->nome) > 0)
         {
             aux = aux->prox;
         }
 
-        // Testa se chegou no final para ser inserido como Ãºltimo elemento da lista
+        // Testa se chegou no final para ser inserido como último elemento da lista
 
         if (aux == NULL)
         {
@@ -70,7 +70,7 @@ void insereNome(struct lista *lista, struct no *elemento)
             lista->ult = elemento;
         }
 
-        // Testa se serÃ¡ o primeiro da lista
+        // Testa se será o primeiro da lista
 
         else if (aux->ant == NULL)
         {
@@ -79,7 +79,7 @@ void insereNome(struct lista *lista, struct no *elemento)
             lista->prim = elemento;
         }
 
-        // InserÃ§Ã£o no meio da lista
+        // Inserção no meio da lista
 
         else
         {
@@ -102,14 +102,14 @@ void insereCodigo(struct lista *lista, struct no *elemento)
     {
         struct no *aux = lista->prim;
 
-        // Move o ponteiro aux atÃ© a posiÃ§Ã£o que deve ser inserido o elemento
+        // Move o ponteiro aux atual a posição que deve ser inserido o elemento
 
         while (aux != NULL && elemento->p_cidade->codigo > aux->p_cidade->codigo)
         {
             aux = aux->prox;
         }
 
-        // Testa se chegou no final para ser inserido como Ãºltimo elemento da lista
+        // Testa se chegou no final para ser inserido como último elemento da lista
 
         if (aux == NULL)
         {
@@ -118,7 +118,7 @@ void insereCodigo(struct lista *lista, struct no *elemento)
             lista->ult = elemento;
         }
 
-        // Testa se serÃ¡ o primeiro da lista
+        // Testa se será o primeiro da lista
 
         else if (aux->ant == NULL)
         {
@@ -127,7 +127,7 @@ void insereCodigo(struct lista *lista, struct no *elemento)
             lista->prim = elemento;
         }
 
-        // InserÃ§Ã£o no meio da lista
+        // Inserção no meio da lista
 
         else
         {
@@ -152,7 +152,7 @@ void consultarNome(struct lista *lista, char *nome)
         else
             aux = aux->prox;
     }
-    printf("\nNome nÃ£o encontrado\n\n");
+    printf("\nNome não encontrado\n\n");
 }
 
 void consultarCodigo(struct lista *lista, int codigo)
@@ -168,7 +168,7 @@ void consultarCodigo(struct lista *lista, int codigo)
         else
             aux = aux->prox;
     }
-    printf("\nCÃ³digo nÃ£o encontrado\n\n");
+    printf("\nCódigo não encontrado\n\n");
 }
 
 void exibir(struct lista *listaNome, struct lista *listaCodigo)
@@ -181,7 +181,7 @@ void exibir(struct lista *listaNome, struct lista *listaCodigo)
         aux = aux->prox;
     }
     aux = listaCodigo->prim;
-    printf("\nLista ordenada por cÃ³digo:\n\n");
+    printf("\nLista ordenada por código:\n\n");
     while (aux != NULL)
     {
         printf("\t%d %s\n", aux->p_cidade->codigo, aux->p_cidade->nome);
